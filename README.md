@@ -1,1 +1,1 @@
-Code for the paper **Improved  convergence rate of $k$NN graph Laplacians**
+Code for the paper **Improved  convergence rate of kNN graph Laplacians**
