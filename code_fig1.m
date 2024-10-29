@@ -43,9 +43,6 @@ y_samp_ref = cdf(t_samp_ref);
 
 
 
-%           Graph Laplacian - pointwise convergence
-
-
 
 
 %%
