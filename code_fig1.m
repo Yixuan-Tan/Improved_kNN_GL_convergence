@@ -67,7 +67,7 @@ map_to_RD_func = @(t) L_mfd  /(2*pi) * 1/(sqrt(5))*[...
 %     cos(2*pi/L_mfd*t), ...
 %     sin(2*pi/L_mfd*t)];
 
-p1 = @(x) (p_laplacian(x)./ pdf(x) + pi^2/5*(4*omegaM^2+1)) / 6;
+Q = @(x) (p_laplacian(x)./ pdf(x) + pi^2/5*(4*omegaM^2+1)) / 6;
 
 
 
@@ -90,7 +90,7 @@ rk = (k_knn1 / (alpha_d*N)).^2;
 rho_bar_ref1 = zeros(N,1);
 for k = 1: N
     x_tmp = x_rand_coord(k);
-    C = [rk * p1(x_tmp) 0 1 -1/pdf(x_tmp)];
+    C = [rk * Q(x_tmp) 0 1 -1/pdf(x_tmp)];
     roots_tmp = roots(C);
     rho_bar_ref1(k) = abs(roots_tmp(3));
 end
@@ -106,7 +106,7 @@ rk = (k_knn2 / (alpha_d*N)).^2;
 rho_bar_ref2 = zeros(N,1);
 for k = 1: N
     x_tmp = x_rand_coord(k);
-    C = [rk * p1(x_tmp) 0 1 -1/pdf(x_tmp)];
+    C = [rk * Q(x_tmp) 0 1 -1/pdf(x_tmp)];
     roots_tmp = roots(C);
     rho_bar_ref2(k) = abs(roots_tmp(3));
 end
